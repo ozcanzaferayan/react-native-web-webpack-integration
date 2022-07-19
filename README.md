@@ -1,4 +1,4 @@
-# Commands
+# Steps
 
 1. Create project and add dependencies
 
