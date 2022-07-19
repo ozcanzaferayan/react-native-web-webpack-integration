@@ -159,3 +159,9 @@ module.exports = {
   },
 };
 ```
+
+5. Run storybook
+
+```bash
+yarn storybook
+```
