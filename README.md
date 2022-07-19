@@ -116,3 +116,46 @@ export default App;
   "web": "webpack-dev-server --config ./webpack.config.js --mode development"
 }
 ```
+
+# For Storybook
+
+1. Add storybook to project
+
+```bash
+npx sb init --type react -f
+```
+
+2. Add components into src/components
+3. Inject webpack into .storybook/main.js
+
+```js
+const custom = require('../webpack.config');
+
+module.exports = {
+  stories: ['../src/components/**/*.stories.[tj]s'],
+  webpackFinal: config => {
+    return {
+      ...config,
+      resolve: {alias: {...config.resolve.alias, ...custom.resolve.alias}},
+      module: {...config.module, rules: custom.module.rules},
+    };
+  },
+  framework: '@storybook/react',
+  core: {
+    builder: '@storybook/builder-webpack5',
+  },
+};
+```
+
+4. Add alias to webpack.config
+
+```js
+module.exports = {
+  resolve: {
+    alias: {
+      'react-native$': 'react-native-web',
+      '@storybook/react-native': '@storybook/react', //<-here
+    },
+  },
+};
+```
