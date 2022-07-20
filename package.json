@@ -10,7 +10,7 @@
     "web": "webpack-dev-server --config ./webpack.config.js --mode development",
     "lint": "eslint .",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs-build -s ./stories/assets"
   },
   "dependencies": {
     "react": "18.0.0",
