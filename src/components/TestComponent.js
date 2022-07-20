@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 function TestComponent() {
   return (
     <View>
-      <Text>Hello from React Native</Text>
+      <Text>Hello from React Native 2</Text>
     </View>
   );
 }
